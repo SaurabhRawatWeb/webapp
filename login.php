@@ -64,7 +64,11 @@ if(isset($_POST["name"]) && isset($_POST["phone"]))
   <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+<<<<<<< HEAD
   <h1 class="text-center">ChatRoom</h1>
+=======
+  <h1>ChatRoom</h1>
+>>>>>>> bb70e69503ef0176d742132d643f0853f2136cab
   <div class="login">
     <h2>Login</h2>
     <p>This ChatRoom is the best example to demonstrate the concept of ChatBot and it's completely for begginners.</p>
