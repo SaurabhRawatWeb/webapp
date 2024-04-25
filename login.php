@@ -1,5 +1,6 @@
 <?php
 include "db.php";
+include "header.php";
 session_start();
 
 if(isset($_POST["name"]) && isset($_POST["phone"]))
@@ -63,7 +64,7 @@ if(isset($_POST["name"]) && isset($_POST["phone"]))
   <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-  <h1>ChatRoom</h1>
+  <h1 class="text-center">ChatRoom</h1>
   <div class="login">
     <h2>Login</h2>
     <p>This ChatRoom is the best example to demonstrate the concept of ChatBot and it's completely for begginners.</p>
