@@ -1,6 +1,7 @@
 <?php
 include "db.php";
-include "header.php";
+// include "header.php";
+include 'cdn.php';
 session_start();
 
 if(isset($_POST["name"]) && isset($_POST["phone"]))
@@ -64,21 +65,25 @@ if(isset($_POST["name"]) && isset($_POST["phone"]))
   <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-  <h1>ChatRoom</h1>
-  <div class="login">
-    <h2>Login</h2>
-    <p>This ChatRoom is the best example to demonstrate the concept of ChatBot and it's completely for begginners.</p>
-    <form action="" method="post">
+    <div class="login text-light mt-5 shadow card " style="background-color:#000000; margin:auto; color:#ffff;">
+    <div class="row">
+      <h1 class="text-center py-3 border-bottom">CHATBOT</h1>
+    </div>
+      <h2 class="text-light pt-5">Login</h2>
+      <p  class="text-light">This ChatRoom is the best example to demonstrate the concept of ChatBot and it's completely for begginners.</p>
+      <form action="" method="post" class="mt-5">
 
-      <h3>UserName</h3>
-      <input type="text" placeholder="Short Name" name="name" required>
+        <h3  class="text-light">UserName</h3>
+        <input type="text" placeholder="Short Name" name="name" required>
 
-      <h3>Mobile No:</h3>
-      <input type="number" placeholder="with country code" min="1111111" max="999999999999999" name="phone" required>
+        <h3  class="text-light mt-3">Mobile No:</h3>
+        <input type="number" placeholder="with country code" min="1111111" max="999999999999999" name="phone" required>
+        <div class="div text-center mt-5">
 
-      <button>Login / Register</button>
+          <button type="button" class="btn text-light btn-info"><i class="fas fa-sign-in"></i> Login </button>
+        </div>
 
-    </form>
-  </div>
-</body>
+      </form>
+    </div>
+  </div></body>
 </html>
