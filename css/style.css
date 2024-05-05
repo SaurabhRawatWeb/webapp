@@ -2,7 +2,10 @@
   box-sizing: border-box;
   font-family: system-ui;
 }
-
+.toast-success
+{
+  background-color:green !important;
+}
 .msg{
   height: 480px;
   margin: 1rem auto;
