@@ -4,7 +4,7 @@
 // ini_set('display_startup_errors', '1');
 // error_reporting(E_ALL);
 session_start();
-include "db.php";
+include "config.php";
 $msg = $_GET["msg"];
 $phone = $_SESSION["phone"];
 $name = $_SESSION["userName"];
