@@ -22,6 +22,7 @@ if($action == 'reg_user')
     $email = $_POST['email'];
     $password = md5($_POST['password']);
     $iAgree = isset($_POST['iAgree']) && $_POST['iAgree'] == '1';
+    $utype = 'user';
 
     if(empty($firstName))
     {
@@ -60,7 +61,7 @@ if($action == 'reg_user')
     }
     else
     {
-        $insert_query = "INSERT INTO `users` (`u_fname`, `u_lname`, `u_email`, `u_password`) VALUES ('$firstName', '$lastName', '$email', '$password')";
+        $insert_query = "INSERT INTO `users` (`u_type`, `u_fname`, `u_lname`, `u_email`, `u_password`) VALUES ('$utype','$firstName', '$lastName', '$email', '$password')";
 
         if(mysqli_query($conn, $insert_query))
         {
@@ -96,6 +97,7 @@ if($action == 'login')
             $row = mysqli_fetch_assoc($result);
             $_SESSION["u_fname"] = $row['u_fname'];
             $_SESSION["user_id"] = $row['id'];
+            $_SESSION['u_type'] = $row['u_type'];
             $_SESSION["u_lname"] = $row['u_lname'];
             $_SESSION["u_email"] = $row['u_email'];
             $_SESSION["u_phone"] = $row['u_phone'];
@@ -114,6 +116,17 @@ if($action == 'login')
         $_SESSION['message'] = 'Error: SQL query failed!';
         header("location:login.php");
         exit;
+    }
+}
+else
+{
+    if(isset($_SESSION['u_fname']) && !empty($_SESSION['user_id']))
+    {
+        header("location:dashboard/index.php");
+    }
+    else
+    {
+        header("location:login.php");
     }
 }
 ?>
